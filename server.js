@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000; // Use Vercel's assigned port or 5000 loc
 // Enable CORS for your frontend domain (replace with your actual frontend URL)
 const corsOptions = {
   origin: [
-    "https://frontend-nxy9vizci-frankos-projects-be10f17b.vercel.app", // frontend URL
+    "https://futjakot", // frontend URL
     "http://localhost:3000", // local frontend URL
   ],
   methods: "GET, POST, PUT, DELETE",
