@@ -10,7 +10,7 @@ const ConfirmEmail = () => {
   const handleConfirm = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://127.0.0.1:5000/confirm", {
+      const response = await axios.post("mg-project.onrender.com/confirm", {
         email,
         confirmation_code: confirmationCode,
       });

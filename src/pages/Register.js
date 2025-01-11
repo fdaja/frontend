@@ -32,7 +32,7 @@ const Register = () => {
 
     try {
       // Call the backend API to register the user
-      const response = await axios.post("http://127.0.0.1:5000/register", {
+      const response = await axios.post("mg-project.onrender.com/register", {
         name: formData.name,
         username: formData.username,
         email: formData.email,

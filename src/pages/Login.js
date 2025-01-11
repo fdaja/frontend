@@ -17,7 +17,7 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://127.0.0.1:5000/login", formData);
+      const response = await axios.post("mg-project.onrender.com/login", formData);
       const { access_token, user_id } = response.data;
 
       // Store the token and user_id in localStorage

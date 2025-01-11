@@ -40,7 +40,7 @@ const Dashboard = () => {
     try {
       const userId = localStorage.getItem("user_id");
       const response = await axios.get(
-        `http://127.0.0.1:5000/users/${userId}/gadgets?is_deleted=${showDeleted}`,
+        `mg-project.onrender.com/users/${userId}/gadgets?is_deleted=${showDeleted}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -56,7 +56,7 @@ const Dashboard = () => {
 
   const fetchReportTypes = useCallback(async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:5000/report_types", {
+      const response = await axios.get("mg-project.onrender.com/report_types", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -90,7 +90,7 @@ const Dashboard = () => {
     try {
       const userId = localStorage.getItem("user_id");
       const payload = { ...newGadget, owner_id: userId };
-      await axios.post("http://127.0.0.1:5000/gadgets", payload, {
+      await axios.post("mg-project.onrender.com/gadgets", payload, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -132,7 +132,7 @@ const Dashboard = () => {
         report_type_id: editGadget.report_type_id,
       };
       await axios.put(
-        `http://127.0.0.1:5000/gadgets/${editGadget.id}/update`,
+        `mg-project.onrender.com/gadgets/${editGadget.id}/update`,
         payload,
         {
           headers: {
@@ -160,7 +160,7 @@ const Dashboard = () => {
   const handleDeleteGadget = async () => {
     try {
       await axios.put(
-        `http://127.0.0.1:5000/gadgets/${selectedGadgetId}`,
+        `mg-project.onrender.com/gadgets/${selectedGadgetId}`,
         { is_deleted: true },
         {
           headers: {
@@ -178,7 +178,7 @@ const Dashboard = () => {
   const handleRecoverGadget = async (gadgetId) => {
     try {
       await axios.put(
-        `http://127.0.0.1:5000/gadgets/${gadgetId}/recover`,
+        `mg-project.onrender.com/gadgets/${gadgetId}/recover`,
         { is_deleted: false },
         {
           headers: {

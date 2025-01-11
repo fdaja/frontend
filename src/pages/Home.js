@@ -22,7 +22,7 @@ const Home = () => {
           const { latitude, longitude } = position.coords;
 
           try {
-            const response = await axios.post("http://127.0.0.1:5000/gadgets/search", {
+            const response = await axios.post("mg-project.onrender.com/gadgets/search", {
               serial_number: serialNumber,
               latitude,
               longitude,

@@ -39,7 +39,7 @@ const UserProfile = () => {
     setLoading(true);
     try {
       const userId = localStorage.getItem("user_id");
-      const response = await axios.get(`http://127.0.0.1:5000/users/${userId}`, {
+      const response = await axios.get(`mg-project.onrender.com/users/${userId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -58,7 +58,7 @@ const UserProfile = () => {
     try {
       const userId = localStorage.getItem("user_id");
       await axios.put(
-        `http://127.0.0.1:5000/users/${userId}/update`,
+        `http://mg-project.onrender.com/users/${userId}/update`,
         userDetails,
         {
           headers: {
@@ -86,7 +86,7 @@ const UserProfile = () => {
     try {
       const userId = localStorage.getItem("user_id");
       await axios.put(
-        `http://127.0.0.1:5000/users/${userId}/change-password`,
+        `mg-project.onrender.com/users/${userId}/change-password`,
         {
           currentPassword: passwordDetails.currentPassword,
           newPassword: passwordDetails.newPassword,
